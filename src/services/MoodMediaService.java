@@ -6,7 +6,7 @@ import entities.MediaContent;
 
 import java.io.IOException;
 
-public class MoodAPI {
+public class MoodMediaService {
     public MediaContent getMediaContentForMood(Mood mood) throws IOException {
         String imageUrl = getImageForMood(mood.getName());
         String spotifyTrackUrl = getSpotifyTrackForMood(mood.getName());

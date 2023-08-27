@@ -1,6 +1,6 @@
 package services;
 
-public interface MoodAction {
+public interface MoodActionService {
 
     public void executeAction();
 

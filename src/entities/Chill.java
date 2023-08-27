@@ -1,8 +1,8 @@
 package entities;
 
-import services.MoodAction;
+import services.MoodActionService;
 
-public class Chill extends Mood implements MoodAction {
+public class Chill extends Mood implements MoodActionService {
     public Chill() {
         super();
     }

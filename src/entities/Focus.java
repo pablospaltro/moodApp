@@ -1,9 +1,9 @@
 package entities;
 
-import services.MoodAction;
+import services.MoodActionService;
 import services.ToDoListService;
 
-public class Focus extends Mood implements MoodAction {
+public class Focus extends Mood implements MoodActionService {
 
 
     public Focus() {

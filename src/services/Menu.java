@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Menu {
 
     Scanner scanner = new Scanner(System.in);
-    MoodAPI moodAPI = new MoodAPI();
+    MoodMediaService moodAPI = new MoodMediaService();
 
     public void moodApp(){
 
