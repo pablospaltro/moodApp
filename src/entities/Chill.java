@@ -1,5 +1,6 @@
 package entities;
 
+import services.CoffeeShopMenu;
 import services.MoodActionService;
 
 public class Chill extends Mood implements MoodActionService {
@@ -7,9 +8,13 @@ public class Chill extends Mood implements MoodActionService {
         super();
     }
 
+
     @Override
     public void executeAction() {
-        System.out.println("\n(・ω<)");
-        System.out.println("- The CoffeeShop is coming soon...\n- Chill.");
+
+        System.out.println("\nEasy now, let's chill\n");
+
+        CoffeeShopMenu coffeeShop = new CoffeeShopMenu();
+        coffeeShop.interactWithCharacters();
     }
 }

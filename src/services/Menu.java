@@ -29,10 +29,10 @@ public class Menu {
                 try {
                     MediaContent mediaContent = moodAPI.getMediaContentForMood(mood);
 
-                    System.out.println("\n- You're giving this kind of vibe");
+                    System.out.println("\n- FOCUS background image:");
                     System.out.println(mediaContent.getImageUrl());
 
-                    System.out.println("- Here's a PlayList for you");
+                    System.out.println("\n- Here's a PlayList for you");
                     System.out.println(mediaContent.getSpotifyTrackUrl());
 
                     mood.executeAction();
@@ -50,10 +50,10 @@ public class Menu {
                 try {
                     MediaContent mediaContent = moodAPI.getMediaContentForMood(mood);
 
-                    System.out.println("\n- You're giving this kind of vibe");
+                    System.out.println("\n- CHILL background image: ");
                     System.out.println(mediaContent.getImageUrl());
 
-                    System.out.println("- Here's a PlayList for you");
+                    System.out.println("\n- Here's a PlayList for you");
                     System.out.println(mediaContent.getSpotifyTrackUrl());
 
                     mood.executeAction();
