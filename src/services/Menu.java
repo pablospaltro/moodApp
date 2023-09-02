@@ -35,7 +35,7 @@ public class Menu {
                     System.out.println("\n- Here's a PlayList for you");
                     System.out.println(mediaContent.getSpotifyTrackUrl());
 
-                    mood.executeAction();
+                    mood.executeMoodAction();
                     askReturnToMenu(backToMenu);
 
                 }   catch (IOException e) {
@@ -56,7 +56,7 @@ public class Menu {
                     System.out.println("\n- Here's a PlayList for you");
                     System.out.println(mediaContent.getSpotifyTrackUrl());
 
-                    mood.executeAction();
+                    mood.executeMoodAction();
                     askReturnToMenu(backToMenu);
 
                 } catch (IOException e) {

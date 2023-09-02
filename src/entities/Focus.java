@@ -1,7 +1,7 @@
 package entities;
 
 import services.MoodActionService;
-import services.ToDoListService;
+import services.ToDoListMenu;
 
 public class Focus extends Mood implements MoodActionService {
 
@@ -11,9 +11,9 @@ public class Focus extends Mood implements MoodActionService {
     }
 
     @Override
-    public void executeAction() {
-        System.out.println("\n- OK, let's focus.");
-        ToDoListService toDo = new ToDoListService();
-        toDo.tasksMenu();
+    public void executeMoodAction() {
+        System.out.println("\n- OK, let's focus.\n");
+        ToDoListMenu toDoList = new ToDoListMenu();
+        toDoList.toDoListMainMenu();
     }
 }

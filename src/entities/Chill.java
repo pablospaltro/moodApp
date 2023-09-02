@@ -10,7 +10,7 @@ public class Chill extends Mood implements MoodActionService {
 
 
     @Override
-    public void executeAction() {
+    public void executeMoodAction() {
 
         System.out.println("\nEasy now, let's chill\n");
 
