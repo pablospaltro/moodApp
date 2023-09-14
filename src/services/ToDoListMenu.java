@@ -14,73 +14,48 @@ public class ToDoListMenu {
 
     ToDoList toDoList = new ToDoList(allTasks, activeTasks, completedTasks);
 
-    public void toDoListMainMenu(){
+    public void toDoList(){
 
         System.out.println("\n| My To-Do List |\n");
-        System.out.println(" | All");
-        listService.displayTasks(toDoList.getAllTasks());
-        System.out.println(" | Active");
-        listService.displayTasks(toDoList.getActiveTasks());
-        System.out.println(" | Completed");
-        listService.displayTasks(toDoList.getCompletedTasks());
-
-        menuOptions();
+        System.out.println(" | ALL");
+        listService.displayTasks(allTasks);
+        System.out.println(" | ACTIVE");
+        listService.displayTasks(activeTasks);
+        System.out.println(" | COMPLETED");
+        listService.displayTasks(completedTasks);
 
     }
 
     public void menuOptions(){
 
-        System.out.println("Select a list: ");
-        int selectedList = scanner.nextInt();
-        scanner.nextLine();
         boolean backToMenu = true;
 
         do {
-            switch (selectedList) {
-                case 1:
-                    tasksMenu(allTasks);
-                case 0:
-                    System.out.println("Good work, see you next time!");
-                    backToMenu = false;
-                    break;
-            }
-        } while (backToMenu);
-    }
-
-    public void tasksMenu(TreeMap<Integer, String> tasks){
-
-        boolean backToMenu = true;
-
-        do {
-            System.out.println("To-Do List: \n");
-            System.out.println("1 | Add task");
+            toDoList();
+            System.out.println("\n1 | Add task");
             System.out.println("2 | Delete task");
             System.out.println("3 | Update task");
             System.out.println("4 | Mark task as completed");
-            System.out.println("5 | Display tasks");
-            System.out.println("6 | Back to Main Menu");
-            System.out.print("Select an option: ");
+            System.out.println("0 | Exit");
 
             int choice = scanner.nextInt();
             scanner.nextLine();
 
             switch (choice) {
                 case 1:
-                    listService.addTask(tasks);
+                    listService.addTask(allTasks);
                     break;
                 case 2:
-                    listService.deleteTask(tasks);
+                    listService.deleteTask(allTasks);
                     break;
                 case 3:
-                    listService.updateTask(tasks);
+                    listService.updateTask(allTasks);
                     break;
                 case 4:
-                    listService.markTaskAsCompleted(tasks);
+                    listService.markTaskAsCompleted(allTasks);
                     break;
-                case 5:
-                    listService.displayTasks(tasks);
-                    break;
-                case 6:
+                case 0:
+                    System.out.println("Good work, see you next time!");
                     backToMenu = false;
                     break;
                 default:

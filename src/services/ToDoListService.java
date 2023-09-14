@@ -11,14 +11,13 @@ public class ToDoListService {
     Scanner scanner = new Scanner(System.in);
     public void displayTasks(TreeMap <Integer, String> tasks) {
 
-        for (Map.Entry<Integer, String> task: tasks.entrySet()) {
-            Integer key;
-            if (task.getKey() == 0) {
-                System.out.println("No tasks yet");
-            } else {
-                key = task.getKey();
+        if (tasks.isEmpty()) {
+            System.out.println("No tasks yet");
+        } else {
+            for (Map.Entry<Integer, String> task : tasks.entrySet()) {
+                Integer key = task.getKey();
                 String value = task.getValue();
-                System.out.println(key + "" + value);
+                System.out.println(key + " " + value);
             }
         }
     }
@@ -30,6 +29,26 @@ public class ToDoListService {
 
         int newIndex = tasks.isEmpty() ? 1 : tasks.lastKey() + 1;
         tasks.put(newIndex, taskDescription);
+        addAnotherTask(tasks);
+    }
+
+    public void addAnotherTask (TreeMap<Integer, String> tasks){
+        boolean keepAddingTasks = true;
+        do {
+            System.out.println("Another task to add? Y / N ");
+            String option = scanner.nextLine();
+            if(option.equalsIgnoreCase("Y")){
+                System.out.println("New task description: ");
+                String taskDescription = scanner.nextLine();
+
+                int newIndex = tasks.isEmpty() ? 1 : tasks.lastKey() + 1;
+                tasks.put(newIndex, taskDescription);
+
+            } else {
+                keepAddingTasks=false;
+            }
+        } while (keepAddingTasks);
+
     }
 
     public void deleteTask(TreeMap<Integer, String> tasks) {

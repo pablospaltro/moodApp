@@ -9,17 +9,18 @@ import java.util.Scanner;
 public class Menu {
 
     Scanner scanner = new Scanner(System.in);
+    ImageScraper scraper = new ImageScraper();
     MoodMediaService moodAPI = new MoodMediaService();
 
     public void moodApp(){
 
-        System.out.println("| moodApp |");
-        System.out.println("How are we feeling today?\n");
+        System.out.println("\n| moodApp |");
+        System.out.println("Select your mood: \n");
         boolean backToMenu = true;
 
         do {
 
-            System.out.println("\nFOCUS  |  CHILL\n");
+            System.out.println("FOCUS  |  CHILL\n");
             String moodSelected = scanner.nextLine();
 
             if (moodSelected.equalsIgnoreCase("FOCUS")){
@@ -30,7 +31,8 @@ public class Menu {
                     MediaContent mediaContent = moodAPI.getMediaContentForMood(mood);
 
                     System.out.println("\n- FOCUS background image:");
-                    System.out.println(mediaContent.getImageUrl());
+                    String imageURL = scraper.getRandomImage("workspace");
+                    System.out.println(imageURL);
 
                     System.out.println("\n- Here's a PlayList for you");
                     System.out.println(mediaContent.getSpotifyTrackUrl());
@@ -51,7 +53,8 @@ public class Menu {
                     MediaContent mediaContent = moodAPI.getMediaContentForMood(mood);
 
                     System.out.println("\n- CHILL background image: ");
-                    System.out.println(mediaContent.getImageUrl());
+                    String imageURL = scraper.getRandomImage("coffeehouse");
+                    System.out.println(imageURL);
 
                     System.out.println("\n- Here's a PlayList for you");
                     System.out.println(mediaContent.getSpotifyTrackUrl());

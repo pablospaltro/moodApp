@@ -14,6 +14,6 @@ public class Focus extends Mood implements MoodActionService {
     public void executeMoodAction() {
         System.out.println("\n- OK, let's focus.\n");
         ToDoListMenu toDoList = new ToDoListMenu();
-        toDoList.toDoListMainMenu();
+        toDoList.menuOptions();
     }
 }
